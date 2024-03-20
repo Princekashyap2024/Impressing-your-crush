@@ -1,3 +1,4 @@
+import { ResponseButton } from "@/components/ResponseButton";
 import Link from "next/link";
 
 export default function Page(){
@@ -22,8 +23,8 @@ export default function Page(){
     <p>kyu aisa kr rahi hai 😣</p>
 
     <div className="btn">
-      <Link href="/yes">Yes</Link>
-      <Link href="/no-3">No</Link>
+    <ResponseButton href="/yes">Yes</ResponseButton>
+        <ResponseButton href="/no-3">No</ResponseButton>
     </div>
   </div>
 }

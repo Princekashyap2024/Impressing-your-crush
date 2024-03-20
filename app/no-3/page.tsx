@@ -1,5 +1,6 @@
-"use client"
+"use client";
 
+import { ResponseButton } from "@/components/ResponseButton";
 import Link from "next/link";
 import { useEffect, useRef } from "react";
 
@@ -16,24 +17,30 @@ export default function Page() {
 
   useEffect(() => {
     if (!ref.current) return;
-    ref.current.addEventListener("mouseenter", moveRandom)
+    ref.current.addEventListener("mouseenter", moveRandom);
     return () => {
-      ref.current?.removeEventListener("mouseenter", moveRandom)
-    }
-  }, [ref.current])
+      ref.current?.removeEventListener("mouseenter", moveRandom);
+    };
+  }, [ref.current]);
 
+  return (
+    <div className="container">
+      <Link href="https://tenor.com/search/peach+goma-stickers" target="_blank">
+        <img
+          src="https://media.tenor.com/3bDvSVpiwjoAAAAi/peach-goma-phone.gif"
+          alt=""
+        />
+      </Link>
 
-  return <div className="container">
-    <Link href="https://tenor.com/search/peach+goma-stickers" target="_blank">
-      <img src="https://media.tenor.com/3bDvSVpiwjoAAAAi/peach-goma-phone.gif" alt="" />
-    </Link>
+      <h1>Manja na! Kitna bhav khaegi 😭</h1>
+      <p>bht glt baat hai 😭</p>
 
-    <h1>Manja na! Kitna bhav khaegi 😭</h1>
-    <p>bht glt baat hai 😭</p>
-
-    <div className="btn">
-      <Link href="/yes">Yes</Link>
-      <div className="fake-btn" ref={ref}>No</div>
+      <div className="btn">
+        <ResponseButton href="/yes">Yes</ResponseButton>
+        <div className="fake-btn" ref={ref}>
+          No
+        </div>
+      </div>
     </div>
-  </div>
+  );
 }
